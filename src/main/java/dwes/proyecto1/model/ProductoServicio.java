@@ -10,13 +10,17 @@ import java.util.ArrayList;
  * @author manuc
  */
 public class ProductoServicio {
-       public List<Producto> getProductos(){
-        List<Producto> products = new ArrayList<>();
-        products.add(new Producto(1,"HP Laptop",799f));
-        products.add(new Producto(2,"IBM Desktop",599f));
-        products.add(new Producto(3,"Cannon Printer",159f));
-        return products;
+            List<Producto> products = new ArrayList<>();
+
+    public ProductoServicio() {
+           products.add(new Producto(1,2004,"Fifa 04","EA SPORT",50f));
+        products.add(new Producto(2,2007,"PES07","PES",40f));
+        products.add(new Producto(3,2018,"Fortnite","EPIC GAMES",0f));
     }
+    
+       public List<Producto> getProductos(){
+        return products;
+    }      
        
     /**
      *
@@ -25,17 +29,10 @@ public class ProductoServicio {
      */
     public Producto getProducto(int id) {
         Producto product = null;
-        switch(id)
-        {
-            case 1:
-                product = new Producto(1,"HP Laptop",799f);
-                break;
-            case 2:
-                product = new Producto(2,"IBM Desktop",599f);
-                break;
-            case 3:
-                product = new Producto(3,"Cannon Printer",159f);
-                break;
+        for(int i=0;i<products.size();i++){
+        if(products.get(i).getId()==id){
+        product = products.get(i);
+        }
         }
         return product;
     } 

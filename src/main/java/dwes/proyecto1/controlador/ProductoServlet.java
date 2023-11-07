@@ -30,9 +30,11 @@ public class ProductoServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+            ProductoServicio service = new ProductoServicio();
+            int contador=0;
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        ProductoServicio service = new ProductoServicio();
         String value = request.getParameter("id");
         if (value != null) {
             int id = Integer.parseInt(value);
