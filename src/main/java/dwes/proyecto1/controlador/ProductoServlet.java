@@ -35,13 +35,18 @@ public class ProductoServlet extends HttpServlet {
             int contador=0;
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String value = request.getParameter("id");
-        if (value != null) {
+            
+            
+            
+        String value = request.getParameter("name");
+        if (value == "detall") {
             int id = Integer.parseInt(value);
             request.setAttribute("single_product", service.getProducto(id));
-        } else {
-            request.setAttribute("product_list", service.getProductos());
-        }
+        } else if(value == "borrar") {
+           
+        }else{
+                 request.setAttribute("product_list", service.getProductos());
+                }
         getServletConfig().getServletContext().getRequestDispatcher("/producto.jsp").forward(request,response);
     }
         

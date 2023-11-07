@@ -46,7 +46,7 @@
  
             <tr>
                 <td><%= product.getNom()%></td>
-                <td><a href="ProductoServlet?id=<%= product.getId()%>">Details...</a></td>
+                <td><a href="ProductoServlet?name=detail&id=<%= product.getId()%>">Details...</a>  <a href="ProductoServlet?name=borrar&id=<%=product.getId() %>" >Eliminar</a></td>
             </tr>
             <% }
           }%>

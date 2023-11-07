@@ -20,7 +20,11 @@ public class ProductoServicio {
     
        public List<Producto> getProductos(){
         return products;
-    }      
+    }
+       
+       public void eliminarProducto(int id){
+       products.remove(id);
+       }
        
     /**
      *
