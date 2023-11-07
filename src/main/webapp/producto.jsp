@@ -27,8 +27,10 @@
  
         <h1>Product Details</h1>
         <div>ID: <%= product.getId()%></div>
-        <div>Name: <%= product.getName()%></div>
-        <div>Price: $ <%= new DecimalFormat("#0.00").format(product.getPrice()) %></div>
+        <div>Any: <%= product.getAny()%></div>
+        <div>Name: <%= product.getNom()%></div>
+        <div>Empresa: <%= product.getEmpresa()%></div>      
+        <div>Price: $ <%= new DecimalFormat("#0.00").format(product.getPreu()) %></div>
         <div><a href="ProductoServlet">Go Back</a></div>
  
         <% } else { %>
@@ -43,7 +45,7 @@
             <% for (Producto product : (List<Producto>)request.getAttribute("product_list")) {%>
  
             <tr>
-                <td><%= product.getName()%></td>
+                <td><%= product.getNom()%></td>
                 <td><a href="ProductoServlet?id=<%= product.getId()%>">Details...</a></td>
             </tr>
             <% }
