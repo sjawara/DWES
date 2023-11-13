@@ -23,8 +23,7 @@
         <%
         if (request.getAttribute("single_product") != null) {
             Producto product = (Producto)request.getAttribute("single_product");
-        %>
- 
+        %> 
         <h1>Product Details</h1>
         <div>ID: <%= product.getId()%></div>
         <div>Any: <%= product.getAny()%></div>
@@ -42,11 +41,13 @@
                     <td><b>Options</b></td>
             </tr>
  
-            <% for (Producto product : (List<Producto>)request.getAttribute("product_list")) {%>
+            <% 
+            for (Producto product : (List<Producto>)request.getAttribute("product_list")) {
+            %>
  
-            <tr>
+                <tr>
                 <td><%= product.getNom()%></td>
-                <td><a href="ProductoServlet?name=detail&id=<%= product.getId()%>">Details...</a>  <a href="ProductoServlet?name=borrar&id=<%=product.getId() %>" >Eliminar</a></td>
+                <td><a href="ProductoServlet?name=detall&id=<%= product.getId()%>">Details...</a>  <a href="ProductoServlet?name=borrar&id=<%=product.getId() %>" >Eliminar</a></td>
             </tr>
             <% }
           }%>

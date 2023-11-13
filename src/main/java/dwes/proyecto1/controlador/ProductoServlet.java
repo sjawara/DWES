@@ -32,18 +32,21 @@ public class ProductoServlet extends HttpServlet {
      */
     
             ProductoServicio service = new ProductoServicio();
-            int contador=0;
+            int contador=1;
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
             
             
-            
+                  //String value = request.getParameter("id");  
         String value = request.getParameter("name");
-        if (value == "detall") {
-            int id = Integer.parseInt(value);
+        if ("detall".equals(value)) {
+
+            int id = Integer.parseInt(request.getParameter("id"));
             request.setAttribute("single_product", service.getProducto(id));
-        } else if(value == "borrar") {
-           
+       } else if("borrar".equals(value)) {
+            String juego=request.getParameter("id");
+           service.eliminarProducto(juego);
+            request.setAttribute("product_list", service.getProductos());
         }else{
                  request.setAttribute("product_list", service.getProductos());
                 }

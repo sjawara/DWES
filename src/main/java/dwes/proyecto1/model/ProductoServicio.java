@@ -13,7 +13,7 @@ public class ProductoServicio {
             List<Producto> products = new ArrayList<>();
 
     public ProductoServicio() {
-           products.add(new Producto(1,2004,"Fifa 04","EA SPORT",50f));
+        products.add(new Producto(1,2004,"Fifa 04","EA SPORT",50f));
         products.add(new Producto(2,2007,"PES07","PES",40f));
         products.add(new Producto(3,2018,"Fortnite","EPIC GAMES",0f));
     }
@@ -22,9 +22,12 @@ public class ProductoServicio {
         return products;
     }
        
-       public void eliminarProducto(int id){
-       products.remove(id);
-       }
+       public void eliminarProducto(String  id){
+           for(int i=0;i<products.size();i++){
+               
+               if(Producto[i]){
+        products.remove(id);}
+           }}
        
     /**
      *
