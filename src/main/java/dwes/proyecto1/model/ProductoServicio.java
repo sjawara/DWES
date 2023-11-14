@@ -5,6 +5,7 @@
 package dwes.proyecto1.model;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  *
  * @author manuc
@@ -21,13 +22,15 @@ public class ProductoServicio {
        public List<Producto> getProductos(){
         return products;
     }
-       
-       public void eliminarProducto(String  id){
-           for(int i=0;i<products.size();i++){
-               
-               if(Producto[i]){
-        products.remove(id);}
-           }}
+       public void eliminarProducto(int  id){
+                   Iterator<Producto> iterator = products.iterator();
+
+           boolean sortida =false;
+           while(iterator.hasNext()){
+               Producto product=iterator.next();
+               if(product.getId() == id){
+                    iterator.remove();               
+           }}}
        
     /**
      *

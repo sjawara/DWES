@@ -45,7 +45,8 @@ public class ProductoServlet extends HttpServlet {
             request.setAttribute("single_product", service.getProducto(id));
        } else if("borrar".equals(value)) {
             String juego=request.getParameter("id");
-           service.eliminarProducto(juego);
+            int juegoo=Integer.parseInt(juego);
+           service.eliminarProducto(juegoo);
             request.setAttribute("product_list", service.getProductos());
         }else{
                  request.setAttribute("product_list", service.getProductos());
