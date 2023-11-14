@@ -48,7 +48,9 @@ public class ProductoServlet extends HttpServlet {
             int juegoo=Integer.parseInt(juego);
            service.eliminarProducto(juegoo);
             request.setAttribute("product_list", service.getProductos());
-        }else{
+       }else if("add".equals(value)){
+             getServletConfig().getServletContext().getRequestDispatcher("/formulariAdd.jsp").forward(request,response);
+       }else{
                  request.setAttribute("product_list", service.getProductos());
                 }
         getServletConfig().getServletContext().getRequestDispatcher("/producto.jsp").forward(request,response);

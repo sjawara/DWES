@@ -22,6 +22,10 @@ public class ProductoServicio {
        public List<Producto> getProductos(){
         return products;
     }
+       public void addProducto(String nom, ){
+       
+       }
+       
        public void eliminarProducto(int  id){
                    Iterator<Producto> iterator = products.iterator();
 
