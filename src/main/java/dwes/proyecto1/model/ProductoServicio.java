@@ -12,7 +12,7 @@ import java.util.Iterator;
  */
 public class ProductoServicio {
             List<Producto> products = new ArrayList<>();
-
+            int id=3;
     public ProductoServicio() {
         products.add(new Producto(1,2004,"Fifa 04","EA SPORT",50f));
         products.add(new Producto(2,2007,"PES07","PES",40f));
@@ -22,14 +22,28 @@ public class ProductoServicio {
        public List<Producto> getProductos(){
         return products;
     }
-       public void addProducto(String nom, ){
+       public void addProducto(int year,String nombre,String empresa,float precio){
+           id++;
+           products.add(new Producto(id,year,nombre,empresa,precio));
+       }
        
+       public void modificarProducto(int id, int year, String nombre, String empresa, float precio){
+           products=getProductos();
+           for(Producto product:products){
+           if(id==product.getId()){
+               product.setAny(year);
+               product.setNom(nombre);
+               product.setEmpresa(empresa);
+               product.setPreu(precio);
+           }
+           }
+           
        }
        
        public void eliminarProducto(int  id){
                    Iterator<Producto> iterator = products.iterator();
 
-           boolean sortida =false;
+           //boolean sortida =false;
            while(iterator.hasNext()){
                Producto product=iterator.next();
                if(product.getId() == id){

@@ -16,16 +16,18 @@
         <h3>Este es un formulario para que puedas añadir un juego.</h3>
         <form action="ProductoServlet" method="POST">
             <label for="año">Año</label>
-            <input id="año"/><br/>
-            <label for="nombre">Nom</label>
-            <input id="nombre"/><br/>
+            <input name="year" id="year"/><br/>
+            <label for="nombre">Nombre</label>
+            <input name="nombre" id="nombre"/><br/>
             <label for="empresa">Empresa</label>
-            <input id="empresa"/><br/>
+            <input name="empresa" id="empresa"/><br/>
             <label for="precio">Precio</label>
-            <input id="precio"/><br/>
+            <input name="precio" id="precio"/><br/>
             <input type="hidden" name="name" value="addform"/>
             <input type="submit" value="Enviar" name="add"/>
         </form>
+                <div><a href="ProductoServlet">Go Back</a></div>
+
     </body>
     
 </html>

@@ -50,6 +50,27 @@ public class ProductoServlet extends HttpServlet {
             request.setAttribute("product_list", service.getProductos());
        }else if("add".equals(value)){
              getServletConfig().getServletContext().getRequestDispatcher("/formulariAdd.jsp").forward(request,response);
+       }else if("addform".equals(value)){
+           String yearS=request.getParameter("year");
+           int year =Integer.parseInt(yearS);
+           String nombre=request.getParameter("nombre");
+           String empresa=request.getParameter("empresa");
+           float precio=Float.parseFloat(request.getParameter("precio"));
+             service.addProducto(year, nombre, empresa, precio);
+             request.setAttribute("product_list", service.getProductos());
+       }else if("modificar".equals(value)){
+           request.setAttribute("product_list", service.getProductos());
+           getServletConfig().getServletContext().getRequestDispatcher("/modificar.jsp?id="+request.getParameter("id")).forward(request,response);
+       }else if("modificarPush".equals(value)){
+           int id=Integer.parseInt(request.getParameter("id"));
+           String yearS=request.getParameter("year");
+           int year =Integer.parseInt(yearS);
+           String nombre=request.getParameter("nombre");
+           String empresa=request.getParameter("empresa");
+           float precio=Float.parseFloat(request.getParameter("precio"));
+             service.modificarProducto(id,year, nombre, empresa, precio);
+             request.setAttribute("product_list", service.getProductos());
+
        }else{
                  request.setAttribute("product_list", service.getProductos());
                 }

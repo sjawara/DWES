@@ -47,7 +47,10 @@
  
                 <tr>
                 <td><%= product.getNom()%></td>
-                <td><a href="ProductoServlet?name=detall&id=<%= product.getId()%>">Details...</a>  <a href="ProductoServlet?name=borrar&id=<%=product.getId() %>" >Eliminar</a></td>
+                <td><a href="ProductoServlet?name=detall&id=<%= product.getId()%>">Details...</a>  
+                    <a href="ProductoServlet?name=borrar&id=<%=product.getId() %>" >Eliminar</a>
+                    <a href="ProductoServlet?name=modificar&id=<%=product.getId() %>">Modificar</a>
+                </td>
             </tr>
             <% }%>
             <a href="ProductoServlet?name=add">Añadir</a>
