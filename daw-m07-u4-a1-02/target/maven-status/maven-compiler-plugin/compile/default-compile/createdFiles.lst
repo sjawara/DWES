@@ -1,0 +1,4 @@
+org/ioc/daw/user/UserDAO.class
+org/ioc/daw/user/User.class
+org/ioc/daw/Uf3.class
+org/ioc/daw/DBConnection.class

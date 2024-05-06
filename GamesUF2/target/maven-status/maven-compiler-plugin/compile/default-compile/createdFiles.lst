@@ -1,0 +1,10 @@
+institutmvmdaw/repository/impl/InMemoryGameRepository.class
+institutmvmdaw/domain/Game.class
+institutmvmdaw/service/MovimentStockService.class
+institutmvmdaw/service/impl/MovimentStockServiceImpl.class
+institutmvmdaw/service/GameService.class
+institutmvmdaw/controller/GameController.class
+institutmvmdaw/controller/MovimentStockController.class
+institutmvmdaw/repository/GamesRepository.class
+institutmvmdaw/service/impl/GameServiceImpl.class
+institutmvmdaw/HelloController.class

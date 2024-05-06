@@ -1,0 +1,7 @@
+com/mycompany/proyectouf1/resources/JakartaEE8Resource.class
+dwes/proyecto1/con/DBConnection.class
+dwes/proyecto1/model/ProductoDAO.class
+dwes/proyecto1/model/ProductoServicio.class
+com/mycompany/proyectouf1/JakartaRestConfiguration.class
+dwes/proyecto1/controlador/ProductoServlet.class
+dwes/proyecto1/model/Producto.class
