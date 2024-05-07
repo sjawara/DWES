@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.ioc.con.DBConnectionTest" time="0.072" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.ioc.con.DBConnectionTest" time="0.073" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="netbeans.deploy" value="true"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/test-classes:/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/test-classes:/home/alumne_2n/DWES/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="Unknown"/>
@@ -13,9 +13,9 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/surefire/surefirebooter-20240416180207390_3.jar /media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/surefire 2024-04-16T18-02-07_352-jvmRun1 surefire-20240416180207390_1tmp surefire_0-20240416180207390_2tmp"/>
+    <property name="sun.java.command" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240507174834148_3.jar /home/alumne_2n/DWES/UF3_Final/target/surefire 2024-05-07T17-48-34_081-jvmRun1 surefire-20240507174834148_1tmp surefire_0-20240507174834148_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/test-classes:/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/test-classes:/home/alumne_2n/DWES/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/alumne_2n"/>
     <property name="user.language" value="ca"/>
@@ -23,19 +23,19 @@
     <property name="java.version.date" value="2024-01-16"/>
     <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final"/>
+    <property name="basedir" value="/home/alumne_2n/DWES/UF3_Final"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final/target/surefire/surefirebooter-20240416180207390_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240507174834148_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="netbeans.deploy.clientUrlPart" value="/ProductoServlet"/>
     <property name="java.runtime.version" value="21.0.2+13-Ubuntu-122.04.1"/>
     <property name="user.name" value="alumne_2n"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="6.5.0-27-generic"/>
+    <property name="os.version" value="6.5.0-28-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
@@ -44,7 +44,7 @@
     <property name="java.vendor.url.bug" value="Unknown"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="java.version" value="21.0.2"/>
-    <property name="user.dir" value="/media/alumne_2n/Expansion/NetBeansProjects/UF3_Final"/>
+    <property name="user.dir" value="/home/alumne_2n/DWES/UF3_Final"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
@@ -56,7 +56,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="connectarAmbLaBaseDeDades" classname="org.ioc.con.DBConnectionTest" time="0.051"/>
+  <testcase name="connectarAmbLaBaseDeDades" classname="org.ioc.con.DBConnectionTest" time="0.052"/>
   <testcase name="dbConnectionWrongDriver" classname="org.ioc.con.DBConnectionTest" time="0.003">
     <system-err><![CDATA[java.lang.ClassNotFoundException: org.h2.WrongDriver
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)

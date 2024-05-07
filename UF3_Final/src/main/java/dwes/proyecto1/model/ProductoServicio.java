@@ -15,6 +15,7 @@ public class ProductoServicio {
             List<Producto> products = new ArrayList<>();
             int id=3;
     ProductoDAO producto ;
+    Producto pro;
 
     public ProductoServicio() {
         producto = new ProductoDAO();
@@ -33,6 +34,10 @@ public class ProductoServicio {
            id++;
            products.add(new Producto(id,year,nombre,empresa,precio));
        }
+       public Producto getProducto(int id) throws Exception{
+           pro = producto.findJuegoById(id);
+           return pro;
+       }
        
        public void modificarProducto(int id, int year, String nombre, String empresa, float precio){
            products=getProductos();
@@ -47,7 +52,9 @@ public class ProductoServicio {
            
        }
        
-       public void eliminarProducto(int  id){
+       public void eliminarProducto(int  id) throws Exception{
+           producto.deleteProductos(id);
+           /*
                    Iterator<Producto> iterator = products.iterator();
 
            //boolean sortida =false;
@@ -55,13 +62,16 @@ public class ProductoServicio {
                Producto product=iterator.next();
                if(product.getId() == id){
                     iterator.remove();               
-           }}}
+           }}
+       
+       */}
        
     /**
      *
      * @param id
      * @return
      */
+       /*
     public Producto getProducto(int id) {
         Producto product = null;
         for(int i=0;i<products.size();i++){
@@ -71,4 +81,5 @@ public class ProductoServicio {
         }
         return product;
     } 
+*/
 }

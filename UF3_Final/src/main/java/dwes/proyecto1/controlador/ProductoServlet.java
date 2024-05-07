@@ -8,6 +8,8 @@ import dwes.proyecto1.con.DBConnection;
 import dwes.proyecto1.model.ProductoDAO;
 import dwes.proyecto1.model.ProductoServicio;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +32,7 @@ public class ProductoServlet extends HttpServlet {
             int contador=1;
 
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+    throws ServletException, IOException, Exception {
             
             
                   //String value = request.getParameter("id");  
@@ -85,7 +87,11 @@ public class ProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                try {
+                    processRequest(request, response);
+                } catch (Exception ex) {
+                    Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }
 
     /**
@@ -99,7 +105,11 @@ public class ProductoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                try {
+                    processRequest(request, response);
+                } catch (Exception ex) {
+                    Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }
 
     /**
