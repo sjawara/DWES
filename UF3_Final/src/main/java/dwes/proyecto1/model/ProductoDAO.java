@@ -77,6 +77,17 @@ public class ProductoDAO {
         }
     }
     
+     public void updateProducto(int id, int year, String nombre, String empresa, float precio) throws Exception {
+        String qry = "UPDATE productos "
+                + "SET any = '" + year + "' ,"
+                + " nom = '" + nombre + "' ,"
+                + " empresa = '" + empresa + "' ,"
+                + " preu = '" + precio + "' "
+                + "WHERE id = '" + id + "' "
+                + ";";
+        createProducto(qry);
+    }
+    
     private Producto createOrUpdateUser(String username, String query) throws Exception {
         int result = executeUpdateQuery(query);
         if (result == 0) {

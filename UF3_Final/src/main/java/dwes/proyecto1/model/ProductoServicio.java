@@ -31,7 +31,6 @@ public class ProductoServicio {
         return products;
     }
        public void addProducto(int year,String nombre,String empresa,float precio) throws Exception{
-           System.out.println("Entra en funcion de añadido de Servicio");
            producto.createJuego(year, nombre, empresa,precio);
           /*
            id++;
@@ -43,7 +42,9 @@ public class ProductoServicio {
            return pro;
        }
        
-       public void modificarProducto(int id, int year, String nombre, String empresa, float precio){
+       public void modificarProducto(int id, int year, String nombre, String empresa, float precio) throws Exception{
+           producto.updateProducto(id, year, nombre, empresa, precio);
+           /*
            products=getProductos();
            for(Producto product:products){
            if(id==product.getId()){
@@ -53,6 +54,7 @@ public class ProductoServicio {
                product.setPreu(precio);
            }
            }
+           */
            
        }
        
