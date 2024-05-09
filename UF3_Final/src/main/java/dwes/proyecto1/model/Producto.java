@@ -61,6 +61,15 @@ public class Producto {
         this.empresa = empresa;
         this.preu = preu;
     }
+
+    public Producto(int any, String nom, String empresa, float preu) {
+        this.any = any;
+        this.nom = nom;
+        this.empresa = empresa;
+        this.preu = preu;
+    }
+    
+    
  
     
  

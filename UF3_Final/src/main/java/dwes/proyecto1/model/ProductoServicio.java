@@ -30,9 +30,13 @@ public class ProductoServicio {
         products = producto.findAllProductos();
         return products;
     }
-       public void addProducto(int year,String nombre,String empresa,float precio){
+       public void addProducto(int year,String nombre,String empresa,float precio) throws Exception{
+           System.out.println("Entra en funcion de añadido de Servicio");
+           producto.createJuego(year, nombre, empresa,precio);
+          /*
            id++;
            products.add(new Producto(id,year,nombre,empresa,precio));
+           */
        }
        public Producto getProducto(int id) throws Exception{
            pro = producto.findJuegoById(id);

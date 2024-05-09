@@ -40,7 +40,7 @@ public class ProductoDAO {
     }
     
     public void deleteProductos(int id) throws Exception{
-      String query = "DELETE FROM productos WHERE id = " + id;        System.out.println("Esta es la query que elimina "+query);
+      String query = "DELETE FROM productos WHERE id = " + id; System.out.println("Esta es la query que elimina "+query);
       createOrUpdateUser("nada", query);
     }
     
@@ -56,7 +56,26 @@ public class ProductoDAO {
        return users;
     }
     
+    public void createJuego(int year, String nom, String empresa, float precio) throws Exception {
+        String qry = "INSERT INTO productos (any, nom, empresa, preu) VALUES ('"
+                + year + "', '"
+                + nom + "', '"
+                + empresa + "', '"
+                + precio + "'"
+                + ");";
+        createProducto(qry);
+    }
+
     
+    private void createProducto(String qry) throws Exception{
+        System.out.println("Entra en la funcion createProducto DAO");
+        int result = executeUpdateQuery(qry);
+        if (result == 0) {
+            throw new Exception("Error creating user");
+        }else{
+            System.out.println("El producto se ha añadido correctamente");
+        }
+    }
     
     private Producto createOrUpdateUser(String username, String query) throws Exception {
         int result = executeUpdateQuery(query);
