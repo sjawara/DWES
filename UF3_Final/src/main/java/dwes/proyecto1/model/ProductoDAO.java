@@ -27,6 +27,8 @@ public class ProductoDAO {
         this.dBConnection = dBConnection;
     }
 
+    
+
     public DBConnection getDBConnection() {
         return this.dBConnection;
     }

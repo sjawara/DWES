@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.ioc.con.DBConnectionTest" time="0.0" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.ioc.con.pru.ProductoDAOTest" time="0.118" tests="5" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="netbeans.deploy" value="true"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/test-classes:/home/alumne_2n/DWES/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="Unknown"/>
-    <property name="user.timezone" value="Europe/Madrid"/>
     <property name="os.name" value="Linux"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240509173544055_3.jar /home/alumne_2n/DWES/UF3_Final/target/surefire 2024-05-09T17-35-44_020-jvmRun1 surefire-20240509173544055_1tmp surefire_0-20240509173544055_2tmp"/>
+    <property name="sun.java.command" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240509175024500_3.jar /home/alumne_2n/DWES/UF3_Final/target/surefire 2024-05-09T17-50-24_460-jvmRun1 surefire-20240509175024500_1tmp surefire_0-20240509175024500_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="org.ioc.con.pru.ProductoDAOTest"/>
     <property name="surefire.test.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/test-classes:/home/alumne_2n/DWES/UF3_Final/target/classes:/home/alumne_2n/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar:/home/alumne_2n/.m2/repository/com/h2database/h2/1.4.190/h2-1.4.190.jar:/home/alumne_2n/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/alumne_2n/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/alumne_2n"/>
@@ -27,11 +26,10 @@
     <property name="basedir" value="/home/alumne_2n/DWES/UF3_Final"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240509173544055_3.jar"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/alumne_2n/DWES/UF3_Final/target/surefire/surefirebooter-20240509175024500_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="netbeans.deploy.clientUrlPart" value="/ProductoServlet"/>
     <property name="java.runtime.version" value="21.0.2+13-Ubuntu-122.04.1"/>
     <property name="user.name" value="alumne_2n"/>
     <property name="stdout.encoding" value="UTF-8"/>
@@ -40,7 +38,7 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="/snap/netbeans/93/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="maven.ext.class.path" value="/snap/netbeans/93/netbeans/java/maven-nblib/netbeans-eventspy.jar:/snap/netbeans/93/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
     <property name="localRepository" value="/home/alumne_2n/.m2/repository"/>
     <property name="java.vendor.url.bug" value="Unknown"/>
     <property name="java.io.tmpdir" value="/tmp"/>
@@ -57,23 +55,50 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="connectarAmbLaBaseDeDades" classname="org.ioc.con.DBConnectionTest" time="0.0"/>
-  <testcase name="dbConnectionWrongDriver" classname="org.ioc.con.DBConnectionTest" time="0.0">
-    <system-err><![CDATA[java.lang.ClassNotFoundException: org.h2.WrongDriver
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:421)
-	at java.base/java.lang.Class.forName(Class.java:412)
-	at dwes.proyecto1.con.DBConnection.getConnection(DBConnection.java:29)
-	at org.ioc.con.DBConnectionTest.dbConnectionWrongDriver(DBConnectionTest.java:48)
+  <testcase name="updateProducto" classname="org.ioc.con.pru.ProductoDAOTest" time="0.085">
+    <system-out><![CDATA[Entra en la funcion createProducto DAO
+El producto se ha añadido correctamente
+Entra en la funcion createProducto DAO
+El producto se ha añadido correctamente
+]]></system-out>
+  </testcase>
+  <testcase name="createUser" classname="org.ioc.con.pru.ProductoDAOTest" time="0.002">
+    <system-out><![CDATA[Entra en la funcion createProducto DAO
+El producto se ha añadido correctamente
+]]></system-out>
+  </testcase>
+  <testcase name="findUserByEmail" classname="org.ioc.con.pru.ProductoDAOTest" time="0.002"/>
+  <testcase name="deleteUser" classname="org.ioc.con.pru.ProductoDAOTest" time="0.006">
+    <system-out><![CDATA[Entra en la funcion createProducto DAO
+El producto se ha añadido correctamente
+Esta es la query que elimina DELETE FROM productos WHERE id = 3
+]]></system-out>
+    <system-err><![CDATA[org.h2.jdbc.JdbcSQLException: Column "USERNAME" not found; SQL statement:
+select * from productos where username ='nada' [42122-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.command.dml.Select.prepare(Select.java:838)
+	at org.h2.command.Parser.prepareCommand(Parser.java:246)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.engine.Session.prepareCommand(Session.java:402)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:73)
+	at dwes.proyecto1.model.ProductoDAO.executeQuery(ProductoDAO.java:150)
+	at dwes.proyecto1.model.ProductoDAO.findUniqueResult(ProductoDAO.java:129)
+	at dwes.proyecto1.model.ProductoDAO.findUserByUsername(ProductoDAO.java:103)
+	at dwes.proyecto1.model.ProductoDAO.createOrUpdateUser(ProductoDAO.java:98)
+	at dwes.proyecto1.model.ProductoDAO.deleteProductos(ProductoDAO.java:46)
+	at org.ioc.con.pru.ProductoDAOTest.deleteUser(ProductoDAOTest.java:96)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
@@ -94,4 +119,5 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></system-err>
   </testcase>
+  <testcase name="findAllUsers" classname="org.ioc.con.pru.ProductoDAOTest" time="0.002"/>
 </testsuite>
