@@ -6,6 +6,7 @@ package com.mycompany.uf4_restfull.resources;
 
 import com.mycompany.uf4_restfull.domain.Cliente;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
@@ -15,6 +16,9 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -41,8 +45,8 @@ public class ClienteResource {
         return Response.created(URI.create("/clientes/"
                 + cli.getId())).build();
     }
-
-    @GET
+    
+     @GET
     @Path("{id}")
     @Produces("application/xml")
     public Cliente recuperarClienteId(@PathParam("id") int id) {
@@ -52,6 +56,41 @@ public class ClienteResource {
         }
         return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
                 cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
+    }
+    
+        
+     @GET
+    @Path("/json/{id}")
+    @Produces("application/json")
+    public Cliente recuperarClienteIdJSON(@PathParam("id") int id) {
+        final Cliente cli = clienteDB.get(id);
+        if (cli == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+        return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
+                cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
+    }
+    
+
+
+    @GET
+    @Path("all")
+    @Produces("application/xml")
+    public ArrayList<Cliente> todosClientes() {
+        ArrayList clientes = new ArrayList();
+        for (Map.Entry<Integer, Cliente> entry : clienteDB.entrySet()) {
+    Integer key = entry.getKey();
+    Cliente value = entry.getValue();
+    
+    clientes.add(new Cliente(value.getId(),value.getNombre(),value.getApellidos(),value.getDireccion(),value.getCodPostal(),value.getCiudad()));
+
+    // Aquí puedes trabajar con la clave y el valor
+    System.out.println("Clave: " + key + ", Valor: " + value);
+    System.out.println("***************************************************************************************************************************************************************************************************************************************************************************************************************");
+    }
+    System.out.println("Clientes:"+clientes.size());
+    return clientes;
+
     }
 
     @PUT
@@ -70,5 +109,24 @@ public class ClienteResource {
         actual.setDireccion(nuevoCli.getDireccion());
         actual.setCodPostal(nuevoCli.getCodPostal());
         actual.setCiudad(nuevoCli.getCiudad());
+    }
+    
+    @DELETE
+    @Path("{id}")
+    @Produces("application/xml")
+    public Cliente borrarClienteId(@PathParam("id") int id) {
+        Iterator<Cliente> it = clienteDB.values().iterator();
+        final Cliente cli = clienteDB.get(id);
+        while(it.hasNext()){
+            Cliente cl = it.next();
+            if(cl.getId()== id){
+                it.remove();
+            }
+        }
+        if (cli == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+        return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
+                cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
     }
 }
