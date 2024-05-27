@@ -130,3 +130,4 @@ public class ClienteResource {
                 cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
     }
 }
+  
