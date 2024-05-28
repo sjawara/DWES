@@ -4,13 +4,14 @@
  */
 package com.mycompany.uf4_restfull.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @XmlRootElement(name="cliente")
@@ -33,6 +34,15 @@ public class Cliente {
     public Cliente() {}
 
     public Cliente(int id, String nombre, String apellidos, String direccion, String codPostal, String ciudad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.codPostal = codPostal;
+        this.ciudad = ciudad;
+    }
+    
+        public Cliente( String nombre, String apellidos, String direccion, String codPostal, String ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;

@@ -5,6 +5,7 @@
 package com.mycompany.uf4_restfull.resources;
 
 import com.mycompany.uf4_restfull.domain.Cliente;
+import com.mycompany.uf4_restfull.domain.ClienteJDBCDAO;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
@@ -33,15 +34,19 @@ public class ClienteResource {
     private static Map<Integer, Cliente> clienteDB
             = new ConcurrentHashMap<Integer, Cliente>();
     private static AtomicInteger idContador = new AtomicInteger();
+    ClienteJDBCDAO clientedb = new ClienteJDBCDAO();
 
     @POST
     @Consumes("application/xml")
     public Response crearCliente(Cliente cli) {
+        /*
         //el parámetro cli se instancia con los datos del cliente del body del mensaje HTTP
         idContador.set(idContador.get() + 1);
         cli.setId(idContador.get());
         clienteDB.put(cli.getId(), cli);
         System.out.println("Cliente creado " + cli.getId());
+        */
+        clientedb.guaradrCliente(cli);
         return Response.created(URI.create("/clientes/"
                 + cli.getId())).build();
     }
