@@ -39,14 +39,7 @@ public class ClienteResource {
     @POST
     @Consumes("application/xml")
     public Response crearCliente(Cliente cli) {
-        /*
-        //el parámetro cli se instancia con los datos del cliente del body del mensaje HTTP
-        idContador.set(idContador.get() + 1);
-        cli.setId(idContador.get());
-        clienteDB.put(cli.getId(), cli);
-        System.out.println("Cliente creado " + cli.getId());
-        */
-        clientedb.guaradrCliente(cli);
+        clientedb.guardarCliente(cli);
         return Response.created(URI.create("/clientes/"
                 + cli.getId())).build();
     }
@@ -55,12 +48,17 @@ public class ClienteResource {
     @Path("{id}")
     @Produces("application/xml")
     public Cliente recuperarClienteId(@PathParam("id") int id) {
-        final Cliente cli = clienteDB.get(id);
+        /*
+final Cliente cli = clienteDB.get(id);
         if (cli == null) {
             throw new WebApplicationException(Response.Status.NOT_FOUND);
         }
         return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
                 cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
+*/
+        Cliente cli = clientedb.obtenerClientePorId(id);
+        return cli;
+
     }
     
         
@@ -95,31 +93,29 @@ public class ClienteResource {
     }
     System.out.println("Clientes:"+clientes.size());
     return clientes;
-
     }
 
-    @PUT
-    @Path("{id}")
-    @Consumes("application/xml")
-    public void modificarCliente(@PathParam("id") int id,
-            Cliente nuevoCli) {
+        @PUT
+        @Path("{id}")
+        @Consumes("application/xml")
+        public void modificarCliente(@PathParam("id") int id, Cliente nuevoCli) {
+            // Verificar que el ID en la URL coincide con el ID en el objeto Cliente
+            if (nuevoCli.getId() == 0) {
+                nuevoCli.setId(id);
+            } else if (nuevoCli.getId() != id) {
+                throw new WebApplicationException("ID mismatch", Response.Status.BAD_REQUEST);
+            }
 
-        Cliente actual = clienteDB.get(id);
-        if (actual == null) {
-            throw new WebApplicationException(Response.Status.NOT_FOUND);
+            clientedb.modificarCliente(nuevoCli);
         }
 
-        actual.setNombre(nuevoCli.getNombre());
-        actual.setApellidos(nuevoCli.getApellidos());
-        actual.setDireccion(nuevoCli.getDireccion());
-        actual.setCodPostal(nuevoCli.getCodPostal());
-        actual.setCiudad(nuevoCli.getCiudad());
-    }
     
     @DELETE
     @Path("{id}")
     @Produces("application/xml")
-    public Cliente borrarClienteId(@PathParam("id") int id) {
+    public void borrarClienteId(@PathParam("id") int id) {
+        clientedb.borrarClientePorId(id);
+        /*
         Iterator<Cliente> it = clienteDB.values().iterator();
         final Cliente cli = clienteDB.get(id);
         while(it.hasNext()){
@@ -128,11 +124,8 @@ public class ClienteResource {
                 it.remove();
             }
         }
-        if (cli == null) {
-            throw new WebApplicationException(Response.Status.NOT_FOUND);
-        }
-        return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
-                cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
+*/
+        
     }
 }
   
