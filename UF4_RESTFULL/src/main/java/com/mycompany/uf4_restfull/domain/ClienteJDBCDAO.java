@@ -4,6 +4,8 @@
  */
 package com.mycompany.uf4_restfull.domain;
 
+import java.util.ArrayList;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -52,6 +54,7 @@ public class ClienteJDBCDAO {
                 Transaction tx = session.beginTransaction();
 
                 // Verificar si el cliente existe en la base de datos
+                //Lo he echo asi porque al modificar con el session me aparecia un error.
                 Cliente clienteExistente = session.get(Cliente.class, cli.getId());
                 if (clienteExistente != null) {
                     // Copiar valores del nuevo cliente al cliente existente
@@ -107,6 +110,21 @@ public class ClienteJDBCDAO {
             e.printStackTrace();
         }
         return cliente;
+    }
+    
+        public ArrayList<Cliente> obtenerTodosLosClientes() {
+        ArrayList<Cliente> listaClientes = new ArrayList<>();
+        // Abrir una sesión de Hibernate
+        try (Session session = sessionFactory.openSession()) {
+            // Crear una consulta HQL para obtener todos los clientes
+            Query<Cliente> query = session.createQuery("from Cliente", Cliente.class);
+            // Ejecutar la consulta y obtener el resultado
+            listaClientes.addAll(query.getResultList());
+            System.out.println("Clientes obtenidos: " + listaClientes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listaClientes;
     }
 
     // Método para cerrar el SessionFactory al finalizar (opcional, por si se requiere)

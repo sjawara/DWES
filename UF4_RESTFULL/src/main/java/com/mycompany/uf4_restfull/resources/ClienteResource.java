@@ -66,12 +66,8 @@ final Cliente cli = clienteDB.get(id);
     @Path("/json/{id}")
     @Produces("application/json")
     public Cliente recuperarClienteIdJSON(@PathParam("id") int id) {
-        final Cliente cli = clienteDB.get(id);
-        if (cli == null) {
-            throw new WebApplicationException(Response.Status.NOT_FOUND);
-        }
-        return new Cliente(cli.getId(), cli.getNombre(), cli.getApellidos(),
-                cli.getDireccion(), cli.getCodPostal(), cli.getCiudad());
+        Cliente cli = clientedb.obtenerClientePorId(id);
+        return cli;
     }
     
 
@@ -80,7 +76,7 @@ final Cliente cli = clienteDB.get(id);
     @Path("all")
     @Produces("application/xml")
     public ArrayList<Cliente> todosClientes() {
-        ArrayList clientes = new ArrayList();
+        /*
         for (Map.Entry<Integer, Cliente> entry : clienteDB.entrySet()) {
     Integer key = entry.getKey();
     Cliente value = entry.getValue();
@@ -92,6 +88,8 @@ final Cliente cli = clienteDB.get(id);
     System.out.println("***************************************************************************************************************************************************************************************************************************************************************************************************************");
     }
     System.out.println("Clientes:"+clientes.size());
+        -*/
+    ArrayList clientes = clientedb.obtenerTodosLosClientes();
     return clientes;
     }
 
